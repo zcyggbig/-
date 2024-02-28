@@ -1,0 +1,19 @@
+import itertools
+
+def truth_table(variables, expression):
+    # 打印表頭
+    print("\t".join(variables), "\t|", expression)
+    print("-" * (len(variables) * 8 + len(expression) + 5))
+    
+    # 计算並打印真值表
+    for combination in itertools.product([False, True], repeat=len(variables)):
+        variables_dict = dict(zip(variables, combination))
+        result = eval(expression, variables_dict)
+        print("\t".join(str(value) for value in combination), "\t|", int(result))
+
+# 输入變量和表達式
+variables = input("請輸入邏輯變量，以空格分隔：").split()
+expression = input("請輸入邏輯表達式，使用Python語法：")
+
+# 生成真值表
+truth_table(variables, expression)
