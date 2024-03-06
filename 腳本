@@ -1,0 +1,12 @@
+# 收集用戶個人資料
+name = input("請輸入您的姓名: ")
+age = int(input("請輸入您的年齡: "))
+height = float(input("請輸入您的身高（米）: "))
+favorite_color = input("請輸入您喜歡的顏色: ")
+
+# 格式化個人資料摘要
+summary = f"姓名: {name}\n年齡: {age}\n身高: {height} 米\n喜歡的顏色: {favorite_color}"
+
+# 輸出個人資料摘要
+print("\n個人資料摘要:")
+print(summary)
