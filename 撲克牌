@@ -1,0 +1,28 @@
+import random
+
+# 建立撲克牌
+suits = ['♠', '♥', '♦', '♣']
+ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+deck = [(rank, suit) for suit in suits for rank in ranks]
+
+# 洗牌
+random.shuffle(deck)
+
+# 發牌
+players = [[] for _ in range(4)]  # 建立四個玩家的 list
+
+# 按照一般撲克牌的發牌順序發給四個人
+for i in range(len(deck)):
+    player_index = i % 4  # 每次發一張牌給下一個玩家
+    players[player_index].append(deck[i])
+
+# 對每位玩家的手牌按照數字大小排序
+for player in players:
+    player.sort(key=lambda card: (ranks.index(card[0]), card[1]))
+
+# 顯示每位玩家的手牌
+for i, player in enumerate(players):
+    print(f"玩家 {i+1} 的手牌:")
+    for card in player:
+        print(f"{card[0]}{card[1]}", end=' ')
+    print()
