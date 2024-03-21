@@ -1,0 +1,7 @@
+my_tuple = (42, "hello", [1, 2, 3], 3.14)
+
+second_element = my_tuple[1]
+last_element = my_tuple[-1]
+
+print("Tuple中的第二個元素:", second_element)
+print("Tuple中的最後一個元素:", last_element)
