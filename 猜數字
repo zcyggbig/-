@@ -1,0 +1,12 @@
+secret_number = 58
+
+while True:
+    guess = int(input("請猜一個數字："))
+    
+    if guess == secret_number:
+        print("恭喜，你猜對了！")
+        break
+    elif guess < secret_number:
+        print("太低了，再試一次。")
+    else:
+        print("太高了，再試一次。")
