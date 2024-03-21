@@ -1,0 +1,9 @@
+number_tuple = (1, 2, 3, 4, 5)
+
+number_list = list(number_tuple)
+
+number_list.extend([6, 7, 8])
+
+updated_tuple = tuple(number_list)
+
+print("更新後的tuple:", updated_tuple)
