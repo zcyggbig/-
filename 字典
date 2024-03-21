@@ -1,0 +1,18 @@
+import random
+questions_dict = {
+    "What is the capital of France?": "Paris",
+    "What is the largest planet in our solar system?": "Jupiter",
+    "Who wrote 'To Kill a Mockingbird'?": "Harper Lee",
+    "What element does 'O' represent on the periodic table?": "Oxygen",
+    "In what year did the Titanic sink?": "1912"
+}
+
+num_selections = 3
+
+if num_selections >= len(questions_dict):
+    selected_questions = questions_dict
+else:
+    selected_questions = random.sample(questions_dict.items(), num_selections)
+
+for question, answer in selected_questions:
+    print(question, ":", answer)
