@@ -1,0 +1,41 @@
+def check_winning_prize(invoice_number, prize_list):
+    for prize, numbers in prize_list.items():
+        if invoice_number in numbers:
+            return prize
+    return "沒有中獎"
+
+def main():
+    prize_list = {
+        "特別獎": ["63603594"],
+        "特獎": ["73155944"],
+        "頭獎": ["94985899", "57283420", "62825278"],
+        "二獎": [],  # 需要與頭獎末7位數相同，這裡先留空
+        "三獎": [],  # 需要與頭獎末6位數相同，這裡先留空
+        "四獎": [],  # 需要與頭獎末5位數相同，這裡先留空
+        "五獎": [],  # 需要與頭獎末4位數相同，這裡先留空
+        "六獎": []   # 需要與頭獎末3位數相同，這裡先留空
+    }
+
+    invoice_number = input("請輸入發票號碼：")
+    prize = check_winning_prize(invoice_number, prize_list)
+    if prize != "沒有中獎":
+        print("恭喜你中獎了！中獎獎項：", prize)
+        if prize in ["特別獎", "特獎"]:
+            print("中獎金額：1000萬元" if prize == "特別獎" else "中獎金額：200萬元")
+        elif prize == "頭獎":
+            print("中獎金額：20萬元")
+        elif prize == "二獎":
+            print("中獎金額：4萬元")
+        elif prize == "三獎":
+            print("中獎金額：1萬元")
+        elif prize == "四獎":
+            print("中獎金額：4千元")
+        elif prize == "五獎":
+            print("中獎金額：1千元")
+        elif prize == "六獎":
+            print("中獎金額：2百元")
+    else:
+        print("很抱歉，你沒有中獎。")
+
+if __name__ == "__main__":
+    main()
